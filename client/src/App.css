@@ -1,48 +1,95 @@
+.title {
+  text-align: center;
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.8px;
+  color: #1e3a8a; /* Deep cool blue */
+  background: linear-gradient(to right, #6366f1, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f7fa;
+  color: #1f2937;
+}
+
 .app-container {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding: 2rem;
-  background-color: #f8f9fc;
-  color: #333;
-  max-width: 900px;
-  margin: auto;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+.custom-navbar {
+  background: linear-gradient(to right, #ffffff, #e6efff);
+  border-bottom: 1px solid #dbeafe;
+  box-shadow: 0 2px 10px rgba(0, 102, 204, 0.08);
+}
+
+.navbar-dark .navbar-nav .nav-link,
+.navbar-dark .navbar-brand {
+  color: #004aad;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-brand:hover {
+  color: #7f56d9;
+  text-shadow: 0 0 4px rgba(127, 86, 217, 0.3);
+}
+
+.brand-glow {
+  font-weight: bold;
+  font-size: 1.6rem;
+  text-shadow: 0 0 8px rgba(0, 102, 204, 0.2);
 }
 
 .title {
   text-align: center;
-  color: #2a52be;
-  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  font-size: 2.75rem;
+  margin-bottom: 1rem;
 }
 
 .message {
   text-align: center;
-  color: #2e8b57;
+  color: #007f5f;
+  font-size: 1.1rem;
   margin-bottom: 2rem;
 }
 
 .error {
-  color: red;
+  color: #e63946;
   text-align: center;
+  font-size: 1.1rem;
   margin-bottom: 2rem;
 }
 
 .mission,
 .demo {
-  background-color: white;
+  background-color: #ffffff;
   padding: 1.5rem;
   margin: 1rem 0;
-  border-radius: 10px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  border: 1px solid #e0e7ff;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.04);
 }
 
 .mission h2,
 .demo h2 {
-  color: #2a52be;
+  color: #004aad;
   margin-bottom: 0.5rem;
 }
 
 .demo-image {
-  width: 100%;
+  max-width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-top: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
 }
