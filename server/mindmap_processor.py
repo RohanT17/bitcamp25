@@ -1,17 +1,15 @@
 import sys
 import whisper
-import spacy
+import yake
 import pandas as pd
 import json
 
 model = whisper.load_model("base")
-nlp = spacy.load("en_core_web_sm")
 
 def extract_keywords(text):
-    doc = nlp(text)
-    keywords = [chunk.text for chunk in doc.noun_chunks if len(chunk.text.split()) > 1]
-    df = pd.DataFrame(keywords, columns=["keyword"])
-    return df["keyword"].value_counts().nlargest(10).index.tolist()
+    kw_extractor = yake.KeywordExtractor(lan="en", n=2, top=10)
+    keywords = kw_extractor.extract_keywords(text)
+    return [kw for kw, score in keywords]
 
 def main(audio_path):
     result = model.transcribe(audio_path)
