@@ -1,16 +1,23 @@
-import express from "express";
-import cors from "cors";
+const express = require('express');
+const cors = require('cors'); // Import the cors package
 
 const app = express();
-const PORT = 5000;
 
-app.use(cors());
-app.use(express.json());
+// Define the CORS options
+const corsOptions = {
+    credentials: true,
+    origin: ['http://localhost:3000', 'http://localhost:80'], // Whitelist the domains you want to allow
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow only specific methods
+    allowedHeaders: ['Content-Type', 'Authorization'], // Allow specific headers
+};
 
-app.get("/", (req, res) => {
-  res.send("Hello from backend!");
+app.use(cors(corsOptions)); // Use the cors middleware with your options
+
+// Your route handlers and other middleware go here
+app.get('/', (req, res) => {
+    // res.send('Hello from the backend!');
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+app.listen(4040, () => {
+    console.log('Server is running on http://localhost:4040');
 });
