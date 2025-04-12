@@ -14,7 +14,7 @@ function MyNavBar() {
             <Nav.Link href="/MindMap" className="nav-link-glow">Mind Map</Nav.Link>
             <Nav.Link href="/StudyAids" className="nav-link-glow">Study Aid</Nav.Link>
             <NavDropdown title="⚙️ Advanced Study Tools" id="basic-nav-dropdown" className="nav-link-glow">
-              <NavDropdown.Item href="#action/3.1">Flashcards</NavDropdown.Item>
+              <NavDropdown.Item href="/FlashCardsGraphics">Flashcards</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Quizzes</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Smart Notes</NavDropdown.Item>
               <NavDropdown.Divider />
