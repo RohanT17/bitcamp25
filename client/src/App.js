@@ -41,7 +41,7 @@ function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:4040/";
+    const apiUrl = "http://localhost:4040/";
     fetch(apiUrl)
       .then((res) => res.ok ? res.text() : Promise.reject(`HTTP error! Status: ${res.status}`))
       .then(setMessage)
