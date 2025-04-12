@@ -3,8 +3,14 @@ import axios from 'axios';
 import './StudyAids.css';
 
 function StudyAids() {
+  console.log(process.env.REACT_APP_OPENROUTER_API_KEY);
+
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
+  const [conversations, setConversations] = useState([]); // Store conversations list
+  const [conversationCount, setConversationCount] = useState(0); // To keep track of the number of conversations
+  const [currentConversation, setCurrentConversation] = useState(null); // To track the current conversation
+  const [conversationsMessages, setConversationsMessages] = useState({}); // Store messages for each conversation
 
   const sendMessage = async () => {
     if (input.trim()) {
@@ -13,13 +19,11 @@ function StudyAids() {
       setInput('');
 
       const systemMessage =
-        'You are a supportive and empathetic mental health assistant. ' +
-        'You provide helpful guidance by inquiring about the causes of their symptoms while ' +
-        'prioritizing the emotional well-being and safety of the user. ' +
-        'You are not a licensed therapist but can offer general mental health support and guidance. ' +
-        'However, before giving any advice, ask at least 3 clarifying questions to the user, one question at a time. ' +
-        'Each question can build off of the previous or relate to the user’s described symptoms. ' +
-        'After that, offer advice that builds off the user’s responses.';
+        'You are a smart and friendly study assistant designed to help users learn more effectively. ' +
+        'You help users by creating mind maps, summarizing notes, and providing useful, personalized study insights. ' +
+        'Before giving advice or generating study materials, ask at least 3 clarifying questions—one at a time—about the topic, the user’s goals, and their preferred study style. ' +
+        'Each question can build on the previous one or explore related areas of the topic. ' +
+        'Once you have enough information, offer organized, helpful study content based on their answers.';
 
       try {
         const response = await axios.post(
@@ -32,12 +36,12 @@ function StudyAids() {
                 role: msg.sender === 'patient' ? 'user' : 'assistant',
                 content: msg.text,
               })),
-              { role: 'user', content: `Mental health context: ${input}` },
+              { role: 'user', content: `Study context: ${input}` },
             ],
           },
           {
             headers: {
-              Authorization: `Bearer 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`,  // Your OpenRouter API key
+              Authorization: `Bearer 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`,
               'Content-Type': 'application/json',
             },
           }
@@ -48,7 +52,15 @@ function StudyAids() {
           sender: 'bot',
         };
 
-        setMessages((prevMessages) => [...prevMessages, botMessage]);
+        const newMessages = [...messages, botMessage];
+
+        // Update the messages for the current conversation
+        setConversationsMessages((prevMessages) => ({
+          ...prevMessages,
+          [currentConversation]: newMessages,
+        }));
+
+        setMessages(newMessages);
       } catch (error) {
         console.error('Error calling OpenRouter API:', error);
         setMessages((prevMessages) => [
@@ -69,17 +81,47 @@ function StudyAids() {
     }
   };
 
+  const startNewConversation = () => {
+    setMessages([]);  // Clear the messages for a new conversation
+    setInput('');  // Optionally clear the input field as well
+
+    // Increment conversation count and add a new conversation to the list
+    setConversationCount((prev) => prev + 1);
+    const newConversation = `Conversation ${conversationCount + 1}`;
+    setConversations((prevConvs) => [
+      ...prevConvs,
+      newConversation,
+    ]);
+    setCurrentConversation(newConversation); // Set the new conversation as current
+  };
+
+  // Function to load a specific conversation
+  const loadConversation = (conversationName) => {
+    setCurrentConversation(conversationName); // Set the conversation number
+    // Load the messages for the selected conversation
+    const loadedMessages = conversationsMessages[conversationName] || [];
+    setMessages(loadedMessages);
+  };
+
   return (
     <div className="chatbot-page">
       <div className="container">
         <div className="conversations-list">
           <h3>Previous Conversations</h3>
           <ul>
-            <li>Conversation 1</li>
-            <li>Conversation 2</li>
-            <li>Conversation 3</li>
+            {conversations.length > 0 ? (
+              conversations.map((conv, index) => (
+                <li key={index} onClick={() => loadConversation(conv)}>
+                  {conv}
+                </li>
+              ))
+            ) : (
+              <p>No conversations yet. Start a new one!</p>
+            )}
           </ul>
-          <button className="new-conversation-btn">Start New Conversation</button>
+          <button className="new-conversation-btn" onClick={startNewConversation}>
+            Start New Conversation
+          </button>
         </div>
 
         <div className="chatbox">
