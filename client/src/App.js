@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Frontend + Backend Template</h1>
+      <h1>Bitcamp 2025 Project Title Goes here .....</h1>
       {error ? (
         <p style={{ color: "red" }}>Error: {error}</p>
       ) : (
