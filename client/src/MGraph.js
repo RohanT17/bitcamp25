@@ -71,8 +71,8 @@ export default function MGraph() {
             // Draw a larger invisible circle for better click detection
             const pointerRadius =
               Math.max(
-                (node.__bckgDimensions?.[0] || 0) / 2,
-                (node.__bckgDimensions?.[1] || 0) / 2,
+                (node.__bckgDimensions?.[0] || 20) / 2, // fallback width
+                (node.__bckgDimensions?.[1] || 12) / 2, // fallback height
                 node.__size || 10
               ) + 4; // Add padding for easier clicking
 
