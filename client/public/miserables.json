@@ -1,0 +1,69 @@
+{
+  "nodes": [
+    {"id": "ScarletMacaw", "group": 1, "summary": "Vibrant red, blue, and yellow parrot native to South American rainforests."},
+    {"id": "Cardinal", "group": 1, "summary": "Bright red songbird common in North American gardens and woodlands."},
+    {"id": "Flamingo", "group": 1, "summary": "Pink wading bird known for standing on one leg in shallow waters."},
+    {"id": "VermilionFlycatcher", "group": 1, "summary": "Small bright red bird found in the southwestern US and Central America."},
+    {"id": "CrimsonRosella", "group": 1, "summary": "Australian parrot with striking crimson plumage and blue cheek patches."},
+    {"id": "SummerTanager", "group": 1, "summary": "All-red songbird that summers in the southern United States."},
+    
+    {"id": "BlueJay", "group": 2, "summary": "Noisy, intelligent blue bird with a distinctive crest, common in eastern North America."},
+    {"id": "IndigoBunting", "group": 2, "summary": "Small bright blue songbird that migrates between North and Central America."},
+    {"id": "Bluebird", "group": 2, "summary": "Small thrush with blue plumage, known for nesting in cavities."},
+    {"id": "Kingfisher", "group": 2, "summary": "Fish-eating bird with bright blue and orange plumage, found near waterways."},
+    {"id": "Peacock", "group": 2, "summary": "Large pheasant with iridescent blue-green tail feathers that form a spectacular fan."},
+    
+    {"id": "Canary", "group": 3, "summary": "Yellow songbird originally from the Canary Islands, popular as a cage bird."},
+    {"id": "Goldfinch", "group": 3, "summary": "Small bright yellow finch with black wings, common across North America."},
+    {"id": "YellowWarbler", "group": 3, "summary": "Small all-yellow songbird that breeds throughout North America."},
+    {"id": "Cockatiel", "group": 3, "summary": "Small grey and yellow crested parrot, popular as a pet."},
+    
+    {"id": "Raven", "group": 4, "summary": "Large all-black bird known for its intelligence and complex vocalizations."},
+    {"id": "Crow", "group": 4, "summary": "Highly adaptable black bird found worldwide, known for problem-solving skills."},
+    {"id": "BlackSwan", "group": 4, "summary": "Large waterbird with black plumage and red bill, native to Australia."},
+    {"id": "Blackbird", "group": 4, "summary": "Common songbird with glossy black plumage and yellow eye-ring."},
+    
+    {"id": "SnowyOwl", "group": 5, "summary": "Large white owl of Arctic regions, known for its diurnal hunting habits."},
+    {"id": "Egret", "group": 5, "summary": "Elegant white wading bird with long legs and neck, found near water."},
+    {"id": "Swan", "group": 5, "summary": "Large white waterbird with long neck, symbolizing grace in many cultures."},
+    {"id": "Cockatoo", "group": 5, "summary": "White parrot with an expressive crest, native to Australia and islands."},
+    
+    {"id": "Robin", "group": 6, "summary": "Familiar orange-breasted songbird, a sign of spring in many regions."},
+    {"id": "Oriole", "group": 6, "summary": "Bright orange and black songbird that weaves hanging nests."},
+    {"id": "Toucan", "group": 6, "summary": "Tropical bird with enormous colorful bill, found in Central and South America."},
+    
+    {"id": "Parrot", "group": 7, "summary": "Colorful tropical bird with curved beak, known for mimicking human speech."},
+    {"id": "Lorikeet", "group": 7, "summary": "Small, brightly colored parrot that feeds on nectar and pollen."},
+    {"id": "Puffin", "group": 7, "summary": "Black and white seabird with colorful beak, excellent swimmer."},
+    {"id": "MandarinDuck", "group": 7, "summary": "Extremely colorful perching duck native to East Asia."}
+  ],
+  "links": [
+    {"source": "ScarletMacaw", "target": "Cardinal", "value": 3},
+    {"source": "Flamingo", "target": "VermilionFlycatcher", "value": 2},
+    {"source": "CrimsonRosella", "target": "SummerTanager", "value": 4},
+    {"source": "BlueJay", "target": "IndigoBunting", "value": 5},
+    {"source": "Bluebird", "target": "Kingfisher", "value": 3},
+    {"source": "Peacock", "target": "Kingfisher", "value": 2},
+    {"source": "Canary", "target": "Goldfinch", "value": 6},
+    {"source": "YellowWarbler", "target": "Cockatiel", "value": 3},
+    {"source": "Raven", "target": "Crow", "value": 8},
+    {"source": "BlackSwan", "target": "Blackbird", "value": 2},
+    {"source": "SnowyOwl", "target": "Egret", "value": 3},
+    {"source": "Swan", "target": "Cockatoo", "value": 2},
+    {"source": "Robin", "target": "Oriole", "value": 4},
+    {"source": "Toucan", "target": "Oriole", "value": 1},
+    {"source": "Parrot", "target": "Lorikeet", "value": 7},
+    {"source": "Puffin", "target": "MandarinDuck", "value": 2},
+    
+    {"source": "ScarletMacaw", "target": "Parrot", "value": 1},
+    {"source": "BlueJay", "target": "Peacock", "value": 1},
+    {"source": "Goldfinch", "target": "Canary", "value": 2},
+    {"source": "Raven", "target": "SnowyOwl", "value": 1},
+    {"source": "Robin", "target": "Cardinal", "value": 1},
+    
+    {"source": "IndigoBunting", "target": "Bluebird", "value": 3},
+    {"source": "Blackbird", "target": "Crow", "value": 4},
+    {"source": "Egret", "target": "Swan", "value": 2},
+    {"source": "Lorikeet", "target": "Parrot", "value": 5}
+  ]
+}

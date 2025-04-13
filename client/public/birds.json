@@ -1,0 +1,78 @@
+{
+  "nodes": [
+    {"id": "JavaScript", "group": 1, "summary": "Dynamic scripting language for web development with wide browser support."},
+    {"id": "TypeScript", "group": 1, "summary": "Superset of JavaScript that adds static typing and other features."},
+    {"id": "React", "group": 1, "summary": "JavaScript library for building user interfaces, especially single-page applications."},
+    {"id": "Angular", "group": 1, "summary": "TypeScript-based web application framework led by Google."},
+    {"id": "Vue", "group": 1, "summary": "Progressive JavaScript framework for building user interfaces and SPAs."},
+    {"id": "Node.js", "group": 1, "summary": "JavaScript runtime built on Chrome's V8 JavaScript engine for server-side programming."},
+    
+    {"id": "Python", "group": 2, "summary": "High-level language known for readability and versatility in data science and web dev."},
+    {"id": "Django", "group": 2, "summary": "High-level Python web framework that encourages rapid development."},
+    {"id": "Flask", "group": 2, "summary": "Lightweight Python web framework that's easy to get started with."},
+    {"id": "NumPy", "group": 2, "summary": "Fundamental package for scientific computing with Python."},
+    {"id": "Pandas", "group": 2, "summary": "Data analysis and manipulation library built on top of NumPy."},
+    
+    {"id": "Java", "group": 3, "summary": "Class-based, object-oriented language designed for portability and security."},
+    {"id": "Kotlin", "group": 3, "summary": "Modern programming language that runs on the JVM, interoperable with Java."},
+    {"id": "Spring", "group": 3, "summary": "Application framework and inversion of control container for Java."},
+    {"id": "Android", "group": 3, "summary": "Mobile operating system and development platform based on Java/Kotlin."},
+    
+    {"id": "C", "group": 4, "summary": "General-purpose, procedural language that influenced many modern languages."},
+    {"id": "C++", "group": 4, "summary": "Extension of C with object-oriented features, used for system/application development."},
+    {"id": "Rust", "group": 4, "summary": "Systems language focusing on safety, particularly safe concurrency."},
+    {"id": "Go", "group": 4, "summary": "Statically typed language designed at Google for simplicity and efficiency."},
+    
+    {"id": "Ruby", "group": 5, "summary": "Dynamic, object-oriented language designed for programmer happiness."},
+    {"id": "Rails", "group": 5, "summary": "Server-side web application framework written in Ruby."},
+    {"id": "Sinatra", "group": 5, "summary": "DSL for quickly creating web applications in Ruby with minimal effort."},
+    {"id": "RSpec", "group": 5, "summary": "Testing framework for Ruby, popular in behavior-driven development."},
+    
+    {"id": "PHP", "group": 6, "summary": "Server-side scripting language designed for web development."},
+    {"id": "Laravel", "group": 6, "summary": "PHP web application framework with elegant syntax."},
+    {"id": "WordPress", "group": 6, "summary": "Content management system written in PHP, powering many websites."},
+    
+    {"id": "SQL", "group": 7, "summary": "Domain-specific language for managing data in relational databases."},
+    {"id": "PostgreSQL", "group": 7, "summary": "Powerful, open-source object-relational database system."},
+    {"id": "MongoDB", "group": 7, "summary": "NoSQL database that uses JSON-like documents with optional schemas."},
+    {"id": "GraphQL", "group": 7, "summary": "Query language for APIs and a runtime for executing those queries."}
+  ],
+  "links": [
+    {"source": "JavaScript", "target": "TypeScript", "value": 8},
+    {"source": "JavaScript", "target": "React", "value": 7},
+    {"source": "TypeScript", "target": "Angular", "value": 6},
+    {"source": "JavaScript", "target": "Vue", "value": 5},
+    {"source": "JavaScript", "target": "Node.js", "value": 9},
+    {"source": "Python", "target": "Django", "value": 6},
+    {"source": "Python", "target": "Flask", "value": 5},
+    {"source": "Python", "target": "NumPy", "value": 7},
+    {"source": "NumPy", "target": "Pandas", "value": 8},
+    {"source": "Java", "target": "Kotlin", "value": 7},
+    {"source": "Java", "target": "Spring", "value": 6},
+    {"source": "Kotlin", "target": "Android", "value": 7},
+    {"source": "Java", "target": "Android", "value": 5},
+    {"source": "C", "target": "C++", "value": 9},
+    {"source": "C", "target": "Rust", "value": 4},
+    {"source": "C", "target": "Go", "value": 3},
+    {"source": "Ruby", "target": "Rails", "value": 9},
+    {"source": "Ruby", "target": "Sinatra", "value": 5},
+    {"source": "Ruby", "target": "RSpec", "value": 6},
+    {"source": "PHP", "target": "Laravel", "value": 7},
+    {"source": "PHP", "target": "WordPress", "value": 8},
+    {"source": "SQL", "target": "PostgreSQL", "value": 7},
+    {"source": "SQL", "target": "MongoDB", "value": 3},
+    {"source": "GraphQL", "target": "MongoDB", "value": 4},
+    
+    {"source": "JavaScript", "target": "Python", "value": 3},
+    {"source": "C++", "target": "Rust", "value": 5},
+    {"source": "Ruby", "target": "Python", "value": 3},
+    {"source": "Java", "target": "C++", "value": 4},
+    {"source": "Node.js", "target": "GraphQL", "value": 5},
+    
+    {"source": "TypeScript", "target": "React", "value": 6},
+    {"source": "Python", "target": "SQL", "value": 4},
+    {"source": "Laravel", "target": "PostgreSQL", "value": 3},
+    {"source": "Django", "target": "PostgreSQL", "value": 5},
+    {"source": "GraphQL", "target": "React", "value": 6}
+  ]
+}

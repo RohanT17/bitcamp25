@@ -18,7 +18,11 @@ function FileUpload({ onDataReady }) {
 
   return (
     <div className="upload-section">
-      <input type="file" accept="audio/*,video/*" onChange={(e) => setFile(e.target.files[0])} />
+      <input
+        type="file"
+        accept="audio/*,video/*"
+        onChange={(e) => setFile(e.target.files[0])}
+      />
       <button onClick={handleUpload}>Generate Mind Map</button>
     </div>
   );

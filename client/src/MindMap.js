@@ -1,27 +1,16 @@
-import { useState } from "react";
-import FileUpload from "./FileUpload";
+import React from "react";
 import "./MindMap.css";
 
 function MindMap() {
-  const [mindMapData, setMindMapData] = useState(null);
+  const handleGenerateMindMap = () => {
+    // Open the mgraph.html page in a new tab
+    window.open("/mgraph.html", "_blank", "noopener,noreferrer");
+  };
 
   return (
     <div className="mindmap-page">
       <h2>Mind Map</h2>
-      <FileUpload onDataReady={setMindMapData} />
-      {mindMapData && (
-        <div className="mindmap-result">
-          <h3>Extracted Key Concepts</h3>
-          <ul>
-            {mindMapData.nodes.map((node) => (
-              <li key={node.id}>{node.label}</li>
-            ))}
-          </ul>
-          <h3>Transcript Preview</h3>
-          <p>{mindMapData.raw_text.slice(0, 500)}...</p>
-          {/* Future: Replace with D3/Mermaid rendering */}
-        </div>
-      )}
+      <button onClick={handleGenerateMindMap}>Generate Mind Map</button>
     </div>
   );
 }
